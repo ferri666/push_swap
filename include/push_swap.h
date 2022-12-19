@@ -6,7 +6,7 @@
 /*   By: ffons-ti <ffons-ti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 14:43:51 by ffons-ti          #+#    #+#             */
-/*   Updated: 2022/12/15 14:08:34 by ffons-ti         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:17:32 by ffons-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdlib.h>
 
 /*CONTROL*/
-int			*validate(char **values, int num_val, char st);
+int			*validate(char **values, int num_val);
 void		program(int *numbers, int num_val);
 void		mini_sort(t_list **stacks, int size);
 void		sort(t_list **stacks, int size);

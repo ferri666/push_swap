@@ -6,7 +6,7 @@
 /*   By: ffons-ti <ffons-ti@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 09:37:08 by ffons-ti          #+#    #+#             */
-/*   Updated: 2022/12/16 18:35:26 by ffons-ti         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:38:47 by ffons-ti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ For the parameters to be valid they have to be:
 2-Not Repeated
 3-Not Exceed the Min or Max of Integers
 */
-int	*validate(char **values, int num_val, char st)
+int	*validate(char **values, int num_val)
 {
 	int		i;
 	int		*numbers;
@@ -108,17 +108,14 @@ int	*validate(char **values, int num_val, char st)
 		return (0);
 	while (i < num_val)
 	{
-		if (st == 'n' && is_int(values[i]))
-			numbers[i - 1] = ft_atoi(values[i]);
-		else if (st == 'y' && is_int(values[i - 1]))
+		if (is_int(values[i - 1]))
 			numbers[i - 1] = ft_atoi(values[i - 1]);
 		else
-			err_invalid("¡Number or Format not valid!\n", numbers);
+			err_invalid("Error: ¡Number or Format not valid!\n", numbers);
 		i++;
 	}
-	if (st == 'y')
-		ft_free_matrix(values, num_val);
+	ft_free_matrix(values, num_val);
 	if (same_number(numbers, num_val - 1))
-		err_invalid("¡You put the same number twice!\n", numbers);
+		err_invalid("Error:¡You put the same number twice!\n", numbers);
 	return (numbers);
 }
